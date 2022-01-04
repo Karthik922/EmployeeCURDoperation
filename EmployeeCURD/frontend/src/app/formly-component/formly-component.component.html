@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+    <span>Angular Formly</span>
+  </mat-toolbar>
+  <div>
+    <form [formGroup]="contactForm" (ngSubmit)="submitForm(contactModel)">
+      <formly-form [model]="contactModel" [fields]="contactFields" [form]="contactForm">
+          <br><br>
+        <button [disabled]="contactForm.invalid" type="submit" mat-raised-button color="primary">Submit Form</button>
+      </formly-form>
+    </form>
+  
+    
+  
+  </div>

@@ -1,0 +1,33 @@
+<div class="container">
+    <form (ngSubmit)="insertData()" [formGroup]="form">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid':submitted && f.name.errors }"placeholder="Enter Name">
+
+            <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                <div *ngIf="f.name.errors.required">Name is Required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="position">Position</label>
+            <input type="text"  formControlName="position" [ngClass]="{ 'is-invalid':submitted && f.position.errors }" class="form-control" placeholder="Enter Your Position">
+
+            <div *ngIf="submitted && f.position.errors" class="invalid-feedback">
+                <div *ngIf="f.position.errors.required">Position is Required</div>
+            </div>
+       
+        </div>
+        <div class="form-group">
+            <label for="Salary">Salary</label>
+            <input type="text" formControlName="salary" [ngClass]="{ 'is-invalid':submitted && f.salary.errors }" class="form-control" placeholder="Enter Salary">
+
+            <div *ngIf="submitted && f.salary.errors" class="invalid-feedback">
+                <div *ngIf="f.salary.errors.required">Salary is Required</div>
+            </div>
+        </div>
+        <div class="form-group">
+                <button class="btn btn-dark btn-sm mt-4">Submit</button>
+
+        </div>
+    </form>
+</div>
